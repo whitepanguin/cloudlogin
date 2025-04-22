@@ -1,5 +1,5 @@
-import express from "express";
-import fs from "fs";
+const express = require("express"); // import 대신 require 사용
+const fs = require("fs");
 
 const app = express();
 const box = {};
