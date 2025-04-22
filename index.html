@@ -274,7 +274,7 @@
         const email = document.getElementById("email").value;
         const userpw = document.getElementById("userpw").value;
 
-        fetch(`http://127.0.0.1:3000/login?userid=${email}&userpw=${userpw}`)
+        fetch(`/login?userid=${email}&userpw=${userpw}`)
           .then((res) => res.text())
           .then((data) => {
             console.log("서버 응답: ", +data);
