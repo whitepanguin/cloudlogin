@@ -4,7 +4,7 @@ import fs from "fs";
 const app = express();
 const box = {};
 app.get("/", (req, res) => {
-  fs.readFile("index.html", (err, data) => {
+  fs.readFile("/index.html", (err, data) => {
     if (err) {
       res.status(500);
       return res.send("파일 읽기 오류");
