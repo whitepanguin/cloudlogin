@@ -91,10 +91,12 @@ const router = express.Router();
  *         description: 회원 탈퇴 완료
  */
 router.post("/signup", (req, res) => {
-  const { userid, email, name, phone } = req.body;
+  const { userid, password, email, name, phone } = req.body;
   res
     .status(200)
-    .send(`POST: /signup 회원정보: ${userid} ${email} ${name} ${phone}`);
+    .send(
+      `POST: /signup 회원정보: ${userid} ${password} ${email} ${name} ${phone}`
+    );
 });
 
 router.post("/login", (req, res) => {
@@ -105,7 +107,7 @@ router.post("/login", (req, res) => {
 router.put("/user/:userid", (req, res) => {
   const { email, name, phone } = req.body;
   const { userid } = req.params;
-  res.status(200).send(`${userid} 정보 수정: ${email} ${name} ${phone}`);
+  res.status(201).send(`${userid} 정보 수정: ${email} ${name} ${phone}`);
 });
 
 router.delete("/user/:userid", (req, res) => {
